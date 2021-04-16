@@ -16,6 +16,12 @@
 
 #pragma once
 
+#define MOUSEKEY_MOVE_DELTA 1
+#define MOUSEKEY_DELAY 1
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_MAX_SPEED 32
+
+
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X64
 #endif
