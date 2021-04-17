@@ -51,13 +51,23 @@ void encoder_update_user(uint8_t index, bool clockwise) {
             case 3:
                 register_code(KC_LGUI);
                 if (clockwise) {
+                    tap_code(KC_I);
+                } else {
                     register_code(KC_LSFT);
                     tap_code(KC_I);
                     unregister_code(KC_LSFT);
-                } else {
-                    tap_code(KC_I);
                 }
                 unregister_code(KC_LGUI);
+            case 4:
+                register_code(KC_LCTL);
+                if (clockwise) {
+                    tap_code(KC_MINS);
+                } else {
+                    register_code(KC_LSFT);
+                    tap_code(KC_EQUAL);
+                    unregister_code(KC_LSFT);
+                }
+                unregister_code(KC_LCTL);
             case 5:
                     if (clockwise) {
                         tap_code(KC_MS_L);
