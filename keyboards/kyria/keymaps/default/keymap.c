@@ -58,6 +58,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                     unregister_code(KC_LSFT);
                 }
                 unregister_code(KC_LGUI);
+                break;
             case 4:
                 register_code(KC_LCTL);
                 if (clockwise) {
@@ -68,6 +69,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                     unregister_code(KC_LSFT);
                 }
                 unregister_code(KC_LCTL);
+                break;
             case 5:
                     if (clockwise) {
                         tap_code(KC_MS_L);
