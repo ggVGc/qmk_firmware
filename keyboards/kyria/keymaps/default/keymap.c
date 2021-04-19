@@ -29,12 +29,10 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 1) {
         switch (biton32(layer_state)) {
             case 0:
-                for (int i = 0; i < 3; ++i) {
-                    if (clockwise) {
-                        tap_code(KC_WH_U);
-                    } else {
-                        tap_code(KC_WH_D);
-                    }
+                if (clockwise) {
+                    tap_code(KC_UP);
+                } else {
+                    tap_code(KC_DOWN);
                 }
                 break;
             case 1:
@@ -83,6 +81,16 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                     } else {
                         tap_code(KC_MS_D);
                     }
+                break;
+            case 7:
+            case 8:
+                for (int i = 0; i < 4; ++i) {
+                    if (clockwise) {
+                        tap_code(KC_WH_U);
+                    } else {
+                        tap_code(KC_WH_D);
+                    }
+                }
                 break;
         }
 
