@@ -155,6 +155,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_BSLS);
                 tap_code(KC_DOT);
                 unregister_code(KC_LSFT);
+                tap_code(KC_SPACE);
             }
             break;
         case ARROW_LEFT:
