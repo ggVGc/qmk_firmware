@@ -15,7 +15,14 @@
  */
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes { DEL_WORD = SAFE_RANGE, PIPE_ARROW, ARROW_LEFT, ARROW_RIGHT, ELIXIR_MAP , KC_SE_AO, KC_SE_AE, KC_SE_OE};
+enum custom_keycodes { DEL_WORD = SAFE_RANGE, PIPE_ARROW, ARROW_LEFT, ARROW_RIGHT, ELIXIR_MAP , KC_SE_AO, KC_SE_AE, KC_SE_OE, 
+    SPACE_1,
+    SPACE_2,
+    SPACE_3,
+    SPACE_4,
+    SPACE_5,
+    SPACE_6
+};
 
 #include "./keymap_gen.h"
 
@@ -70,9 +77,9 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                 break;
             case 5:
                     if (clockwise) {
-                        tap_code(KC_MS_L);
+                        tap_code(KC_PGUP);
                     } else {
-                        tap_code(KC_MS_R);
+                        tap_code(KC_PGDN);
                     }
                 break;
             case 6:
@@ -172,6 +179,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LSFT);
                 tap_code(KC_DOT);
                 unregister_code(KC_LSFT);
+            }
+            break;
+        case SPACE_1:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_1);
+            }
+            break;
+        case SPACE_2:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_2);
+            }
+            break;
+        case SPACE_3:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_3);
+            }
+            break;
+        case SPACE_4:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_4);
+            }
+            break;
+        case SPACE_5:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_5);
+            }
+            break;
+        case SPACE_6:
+            if (record->event.pressed) {
+                tap_code(KC_SPACE);
+                tap_code(KC_6);
             }
             break;
     }
